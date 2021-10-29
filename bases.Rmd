@@ -1,0 +1,50 @@
+---
+title: "Manipulación de bases de datos"
+author: "Jorge Torres"
+date: "29/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse) 
+library(DT)
+```
+
+# Conociendo IRIS
+
+This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+(R Cran)
+
+# Tabla de IRIS 
+
+```{r}
+datatable(iris) 
+```
+
+# Resumen estadistico de IRIS
+<center> 
+```{r}
+summary(iris)
+```
+</center>
+
+# Filtrando todas aquellas que sean setosa 
+
+```{r}
+setosa <- filter(iris, Species == "setosa")
+datatable(setosa) 
+```
+
+# Seleccionando pegar Sepal.Length
+
+```{r}
+largo_sepalo_setosa <- select(setosa, Sepal.Length)
+datatable(largo_sepalo_setosa, extensions = 'Buttons', options = list(dom = 'Bfrtip', buttons = c('copy', 'csv', 'excel', 'pdf', 'print')))
+```
+
+# Felicidades muy buen trabajo 
+``` 
+
+
+
+
